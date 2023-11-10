@@ -1,0 +1,30 @@
+dependencies:
+  - smartcontractkit/chainlink@2.7.1-clf-20231106
+  - OpenZeppelin/openzeppelin-contracts@5.0.0
+
+compiler:
+  solc:
+    version: 'v0.8.20'
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink@2.7.1-clf-20231106'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@5.0.0'
+
+dotenv: .env
+wallets:
+  from_key: ${PRIVATE_KEY}
+
+networks:
+  default: development
+  Sepolia:
+    eth_usd_price: '0x694AA1769357215DE4FAC081bf1f309aDC325306'
+    verify: True
+  mainnet-fork:
+    eth_usd_price: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'
+    verify: False
+  mainnet-fork-dev:
+    eth_usd_price: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'
+    verify: False
+  development:
+    verify: False
+  ganache-local:
+    verify: False
